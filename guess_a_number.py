@@ -4,13 +4,18 @@ import random
 
 low = 1
 high = 1000
+limit = 10
 
+#start game
 rand = random.randint(low, high)
-print("I'm thinking of a number from " + str(low) + " to " + str(high)+ ".");
+print("I'm thinking of a number from " + str(low) + " to " + str(high)+ ". You have " + str(limit) + " tries to guess it.")
 
 guess = -1
+tries = 0
 
-while guess != rand:
+      
+#play game 
+while guess != rand and tries < limit:
     guess = input("Take a guess: ")
     guess = int(guess)
     
@@ -18,7 +23,11 @@ while guess != rand:
         print("You guessed too low.")
     elif guess > rand:
         print("You guessed too high.")
-    else:
-        print("You got it!")
+    tries += 1
 
+#end game 
 print("Game over")
+if guess == rand:
+    print("You win.")
+else:
+    print("You lose. The number was " + str(rand) + ".")  
