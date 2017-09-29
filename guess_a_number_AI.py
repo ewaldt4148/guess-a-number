@@ -1,3 +1,4 @@
+
 # Emma #1
 # Guess a Number AI
 
@@ -110,8 +111,9 @@ def play():
             pass
         elif result == 1:
             current_high = guess - 1
-            
-        show_result()
+
+        
+    show_result()
       
 #game starts running
 show_start_screen()
@@ -123,4 +125,6 @@ while playing:
     playing = play_again()
 
 show_credits()
+
+
 
